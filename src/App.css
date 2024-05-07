@@ -1,0 +1,11 @@
+.contentApp {
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 0.5em;
+    margin: 0 auto;
+}

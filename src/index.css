@@ -1,0 +1,33 @@
+:root {
+  --white: #ffff;
+  --black: #0000;
+  --mcBlackGrey: #3d3845;
+  --mcBlue: #175e7b;
+  --mcYellow: #ebad22;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--mcBlue);
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: var(--mcBlue);
+  color: var(--white);
+  padding: 1rem;
+}
