@@ -1,15 +1,6 @@
-.formSignup {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .formSignup-container {
-  max-width: 100%;
-  height: 620px;
+  max-width: 400px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,13 +17,12 @@
 .formSignup-container-cabezera {
   width: 100%;
   height: 12%;
-  background-color: var(--mcYellow);
+  background-color: var(--secondary);
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--white);
-  margin-bottom: 30px;
-  padding: 2.8em 5em;
+  padding: 3em 5em;
 }
 
 .formSignup-container-cabezera h3 {
@@ -41,16 +31,17 @@
 }
 
 .formSignup-container-form {
-  width: 95%;
-  height: 88%;
+  max-width: 400px;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 1em 0 1em;
+  padding: 0 1em;
 }
 
 .formSignup-container-TextField {
-  margin-bottom: 0.7em;
+  margin-top: -1em;
+  width: 280px;
 }
 
 .formSignup-container-TextField input {
@@ -60,17 +51,15 @@
 .formSignup-container-button {
   display: flex;
   justify-content: center;
-  padding: 0 0 3.5em 0;
+  padding: 0.5em;
 }
 
 .formSignup-container-button button {
-  /* width: 130px; */
-  width: 100%;
+  width: 90%;
   height: 48px;
   border-radius: 50px;
-  background-color: var(--mcBlue) !important;
-  /* padding: 1em 2.5em; */
-  margin-top: 0.5em;
+  margin-top: 1em;
+  color: #9fc0d099;
 }
 
 @media (width < 500px) {

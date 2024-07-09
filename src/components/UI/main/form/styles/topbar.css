@@ -1,0 +1,15 @@
+.create-form-preview {
+    transition: transform 0.3s ease;
+    width: 30px;
+    cursor: pointer;
+}
+
+.create-form-preview:hover {
+    transform: scale(0.9) rotate(-10deg);
+}
+
+.create-form-btn-status {
+    width: 90px;
+    height: 35px !important;
+    font-size: 0.6rem !important;
+}

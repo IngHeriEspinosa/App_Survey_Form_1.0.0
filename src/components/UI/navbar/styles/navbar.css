@@ -1,0 +1,69 @@
+.navbar {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary);
+    align-items: center;
+    padding: 0 2em;
+    color: var(--white);
+}
+
+.navbar-container {
+    gap: 1.5em;
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-container-menu {
+    cursor: pointer !important;
+    z-index: 10000;
+}
+
+.navbar-container-logo {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-container-logo-img {
+    width: 380px;
+    position: absolute;
+    top: -142px;
+    left: -100px;
+    z-index: 101;
+}
+
+.navbar-container-search {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.navbar-container-search input {
+    width: 250px;
+    background-color: white;
+    border: none;
+    height: 13px;
+    padding: 0.8em;
+    border-radius: 2em;
+    font-size: 13px;
+}
+
+.navbar-container-profile-card {
+    width: 45px;
+    aspect-ratio: 1;
+    border-radius: 50% !important;
+    cursor: pointer;
+}
+
+.navbar-container-profile-card-img {
+    width: 55px;
+    background-color: var(--white);
+    padding: 8px;
+}

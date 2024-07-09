@@ -1,2 +1,2 @@
-export * from './Login'
-export * from './Signup'
+export * from './UI/navbar'
+export * from './auth'

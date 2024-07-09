@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Login, Signup } from './components'
+import { Login, Signup } from './components/auth'
+import Home from './pages/Home'
 
 
 
@@ -11,14 +12,18 @@ function App() {
 
   return (
     <div className='contentApp'>
-      {!LoginBool ?
+      {/* {!LoginBool ?
         <Signup />
 
         :
         <Login />
 
 
-      }
+      } */}
+
+      {/* <Login /> */}
+      {/* <Signup /> */}
+      <Home />
     </div>
   )
 }

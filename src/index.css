@@ -1,9 +1,13 @@
 :root {
+  --primary: #175e7b;
+  --secondary: #ebad22;
+  --sbSecondary: #f5bf1c;
   --white: #ffff;
+  --greyW: #f0f0f0;
+  --greyM: #8b8b8bef;
   --black: #0000;
   --mcBlackGrey: #3d3845;
-  --mcBlue: #175e7b;
-  --mcYellow: #ebad22;
+  --mcBlackBlue: #C5D7DF;
 }
 
 * {
@@ -11,10 +15,7 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
-}
-
-body {
-  background-color: var(--mcBlue);
+  z-index: 100;
 }
 
 ul li {
@@ -25,9 +26,61 @@ a {
   text-decoration: none;
 }
 
-button {
-  border: none;
-  background-color: var(--mcBlue);
-  color: var(--white);
-  padding: 1rem;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/* customScrollbar.css */
+.custom-scrollbar {
+  overflow-y: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #727272;
 }
