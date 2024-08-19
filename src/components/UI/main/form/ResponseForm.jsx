@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material"
 import { TopBar } from "./TopBar"
 import { useDataForm } from "../../../../global"
 
-export const ResponseForm = () => {
+export const ResponseForm = ({ viewResponseform, setViewResponseform }) => {
 
     // Variables
     const questionT = [
@@ -10,22 +10,26 @@ export const ResponseForm = () => {
         { nombres: "Fleirin", apellidos: "Cipion", edad: 25, otros: "off" },
         { nombres: "Jose", apellidos: "Almanzar", edad: 19, otros: "lt" },
         { nombres: "Michael", apellidos: "Albert", edad: 29, otros: "ok" },
-        { nombres: "Pedro", apellidos: "Santana", edad: 30, otros: "not" },
+        // { nombres: "Pedro", apellidos: "Santana", edad: 30, otros: "not" },
     ]
 
     // Status
-    const {
-        formTitle,
-    } = useDataForm()
+    const { formData } = useDataForm()
+    const { titleForm } = formData
 
     return (
         <Box>
-            <TopBar />
+            <TopBar
+                viewResponseform={viewResponseform}
+                setViewResponseform={setViewResponseform}
+            />
+
+
             <Box
-                className="flex"
+                className="flex fadeIn"
                 sx={{
                     width: "100%",
-                    height: "85vh",
+                    height: "calc(100vh - 110px)",
                     flexDirection: "column",
                     justifyContent: "start",
                     gap: "1em",
@@ -34,7 +38,7 @@ export const ResponseForm = () => {
                 }}>
                 <Box
                     sx={{
-                        width: "600px",
+                        width: "750px",
                         borderRadius: "1.8em",
                         padding: "1.2em 2em",
                         display: "flex",
@@ -42,14 +46,14 @@ export const ResponseForm = () => {
                         justifyContent: "center",
                         backgroundColor: "var(--white)"
                     }}>
-                    <Typography component='h1' variant="h6" sx={{ color: 'var(--greyM)', padding: '0.2em 0 0.1em' }}>{formTitle}</Typography>
+                    <Typography component='h1' variant="h6" sx={{ color: 'var(--greyM)', padding: '0.2em 0 0.1em' }}>{titleForm}</Typography>
                     <Typography component='h1' variant="body2" sx={{ color: 'var(--primary)', padding: '0 0.2em' }}>{"7"} Respuestas</Typography>
                 </Box>
 
                 <Box position='relative'>
                     <Box
                         sx={{
-                            width: "600px",
+                            width: "750px",
                             borderRadius: "1.8em",
                             padding: "1.2em 2em",
                             display: "flex",
@@ -75,7 +79,8 @@ export const ResponseForm = () => {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    height: '30px',
+                                    height: '32px',
+                                    padding: '1em',
                                     borderRadius: '0.8em',
                                     backgroundColor: 'var(--secondary)',
                                     ':hover': {
@@ -94,22 +99,35 @@ export const ResponseForm = () => {
                                     questionT.map((item, index) => (
                                         <Box key={index}>
                                             <Typography>1. Nombres</Typography>
+                                            <Typography
+                                                component='a'
+                                                variant="caption"
+                                                sx={{
+                                                    color: "var(--primary)",
+                                                    cursor: "pointer",
+                                                    borderBottom: '1px dashed var(--primary)',
+                                                    marginLeft: '1.6em',
+                                                    fontSize: '11px'
+                                                }}
+                                            >
+                                                Mas detalles
+                                            </Typography>
+
                                             <Box
                                                 width='100%'
                                                 display='flex'
                                                 flexDirection='column'
                                                 alignItems='center'
                                                 padding='0.8em 1em 1em 4em'
-
                                             >
                                                 <Typography
-                                                    component='h4'
-                                                    variant='h4'
-                                                    sx={{ fontSize: "1.5rem", color: 'var(--greyM)', }}>{questionT.length}</Typography>
+                                                    component='h3'
+                                                    variant='h3'
+                                                    sx={{ fontSize: "2rem", color: 'var(--greyM)', fontWeight: 'bold' }}>{questionT.length}</Typography>
                                                 <Typography
                                                     component='h5'
                                                     variant="caption"
-                                                    sx={{ color: 'var(--greyM)', }}
+                                                    sx={{ color: 'var(--greyM)' }}
                                                 >
                                                     Respuestas
                                                 </Typography>

@@ -2,8 +2,7 @@ import { Box, Card, CardActions, CardContent, CardMedia, IconButton, Typography 
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 
-export const CardViewForm = ({ formFavorite, titulo, nombre, respuestas, fav }) => {
-
+export const CardViewForm = ({ formFavorite, titulo, nombre, respuestas }) => {
 
     return (
         <Card sx={{ width: "290px", height: "320px", cursor: "pointer", padding: 0, borderRadius: "1em" }}>
@@ -22,8 +21,8 @@ export const CardViewForm = ({ formFavorite, titulo, nombre, respuestas, fav }) 
                 </Typography>
             </CardContent>
             <CardActions disableSpacing sx={{ height: "50px" }}>
-                <IconButton onClick={() => fav(!formFavorite)} aria-label="add to favorites">
-                    <FavoriteIcon />
+                <IconButton aria-label="add to favorites">
+                    <FavoriteIcon color={formFavorite ? 'secondary' : ''} />
                 </IconButton>
                 <IconButton aria-label="share">
                     <ShareIcon />

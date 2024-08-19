@@ -49,7 +49,7 @@ export const Signup = () => {
                                 value={values.email}
                                 onChange={handleChange}
                                 fullWidth
-                                placeholder="@multicomputos.com"
+                                placeholder="hola@multicomputos.com"
                                 helperText={touched.email && errors?.email
                                     ? errors.email
                                     : "*"

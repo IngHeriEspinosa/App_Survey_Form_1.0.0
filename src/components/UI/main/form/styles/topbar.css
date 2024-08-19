@@ -1,6 +1,6 @@
 .create-form-preview {
     transition: transform 0.3s ease;
-    width: 30px;
+    width: 26px;
     cursor: pointer;
 }
 
@@ -10,6 +10,18 @@
 
 .create-form-btn-status {
     width: 90px;
-    height: 35px !important;
-    font-size: 0.6rem !important;
+    height: 31px !important;
+    font-size: 9px !important;
+}
+
+.disabled-button {
+    pointer-events: none;
+    opacity: 0.5;
+    /* Cambia el color de fondo para indicar que está deshabilitado */
+    cursor: not-allowed;
+    /* Cambia el cursor para indicar que no es interactivo */
+}
+
+.disabled-button:hover {
+    transform: none;
 }

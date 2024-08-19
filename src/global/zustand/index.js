@@ -1,46 +1,84 @@
 
 import { create } from 'zustand'
+import { generateUUID } from '../../utils/generateUUID'
 
 // 
 const useDataForm = create((set) => ({
     // Variables
-    formTitle: 'Formulario sin titulo',
-    option: 3,
-    questionTitle: 'Pregunta sin titulo',
-    descriptionForm: '',
-    mandatoryQuetion: false,
+    formData: {
+        idForm: generateUUID(),
+        titleForm: 'Formulario sin titulo',
+        descriptionForm: '',
+        questionData: [{
+            idQuestion: generateUUID(),
+            title: 'Pregunta o Mensaje sin titulo',
+            description: '',
+            type: 3,
+            options: [{ id: 1, value: '' }],
+            mandatory: false,
+            viewDescriptionQuestion: false
+        }],
+        favoriteForm: false
+    },
 
-    // Metods
-    setFormTitle: (newValue) => set((states) => ({ ...states, formTitle: newValue })),
-    setOption: (newValue) => set((states) => ({ ...states, option: newValue })),
-    setQuestionTitle: (newValue) => set((states) => ({ ...states, questionTitle: newValue })),
-    setDescriptionForm: (newValue) => set((states) => ({ ...states, descriptionForm: newValue })),
-    setMandatoryQuetion: (newValue) => set((states) => ({ ...states, mandatoryQuetion: newValue })),
+    // Methods
+    setFormData: (newValue) => set((state) => ({ formData: { ...state.formData, ...newValue } })),
+    setQuestionData: (newValue) => set((state) => ({
+        formData: {
+            ...state.formData,
+            questionData: newValue
+        }
+    })),
+    setTitleForm: (newValue) => set((state) => ({
+        formData: {
+            ...state.formData,
+            titleForm: newValue
+        }
+    })),
+    setDescriptionForm: (newValue) => set((state) => ({
+        formData: {
+            ...state.formData,
+            descriptionForm: newValue
+        }
+    })),
 }))
 
 // 
-const useCreateForm = create((set) => ({
-    formCreate: false,
-    createForm: (newValue) => set((states) => ({ ...states, formCreate: newValue }))
+const usePreviewForm = create((set) => ({
+    // Variables
+    preview: false,
+
+    // Methods
+    setPreview: (newValue) => set((state) => ({ ...state, preview: newValue }))
 }))
 
 // 
-const useResponseForm = create((set) => ({
-    formResponse: false,
-    responseForm: (newValue) => set((states) => ({ ...states, formResponse: newValue }))
-}))
+const useDataResponse = create((set) => ({
+    responseData: {
+        idForm: 0,
+        questionResponse: [
+            {
+                questionId: 1,
+                response: [
+                    { id: 1, value: '' }
+                ]
+            }
+        ]
+    },
 
-// Estado y funcion para añadir o quitar los formularios de favoritos.
-const useFavorite = create((set) => ({
-    formFavorite: false,
-    fav: (newValue) => set((state) => ({ ...state, formFavorite: newValue }))
-
+    setResponseData: (newValue) => set((state) => ({
+        responseData: {
+            ...state,
+            idForm: newValue?.idForm,
+            questionResponse: newValue?.questionResponse
+        }
+    }))
 }))
 
 // Estado y funcion para cambiar el valor de busqueda de los formularios.
 const useSearchForm = create((set) => ({
     valueForm: 1,
-    changeValueForm: (newValue) => set((state) => ({ ...state, valueForm: newValue }))
+    setChangeValueForm: (newValue) => set((state) => ({ ...state, valueForm: newValue }))
 }))
 
-export { useCreateForm, useFavorite, useSearchForm, useResponseForm, useDataForm }
+export { useSearchForm, useDataForm, useDataResponse, usePreviewForm }

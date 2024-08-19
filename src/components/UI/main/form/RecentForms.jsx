@@ -1,11 +1,7 @@
 import { Box, MenuItem, TextField, Typography } from "@mui/material"
-import { CardViewForm } from "../CardViewForm"
-import { useFavorite } from "../../../../global";
+import { CardViewForm } from "./card/CardViewForm"
 
 export const RecentForms = () => {
-
-    // States
-    const { formFavorite, fav } = useFavorite()
 
     // const titulo = "En que piso le gustaria trabajar en el edificio nuevo"
     // MAXIMO DE 80 CARACTERES.
@@ -19,37 +15,43 @@ export const RecentForms = () => {
     };
 
     return (
-        <Box sx={{ width: "100%", height: "100%", backgroundColor: "var(--greyW)", display: "flex", justifyContent: "center" }}>
+        <Box sx={{ width: "100%", height: "calc(100vh - 200px)", backgroundColor: "var(--greyW)", display: "flex", justifyContent: "center" }}>
             <Box sx={{ padding: 0 }}>
                 <Box sx={{ width: "85%", height: "80px", display: "flex", justifyContent: "space-between", padding: "0.5em" }}>
                     <Typography sx={{ padding: "1em 5em", color: "var(--greyM)" }}>Formularios recientes</Typography>
-
                 </Box>
-                <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1em", padding: "1em 1.5em" }}>
+
+                <Box
+                    className='custom-scrollbar'
+                    sx={{
+                        height: '100%',
+                        display: "flex",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
+                        gap: "1em",
+                        padding: "1em 1.5em 7em 0",
+                        overflowY: 'auto'
+                    }}>
                     <CardViewForm
-                        formFavorite={formFavorite}
-                        fav={fav}
+                        formFavorite={false}
                         titulo={titulo}
                         nombre={nombre}
                         respuestas={respuestas}
                     />
                     <CardViewForm
-                        formFavorite={formFavorite}
-                        fav={fav}
+                        formFavorite={false}
                         titulo={titulo}
                         nombre={nombre}
                         respuestas={respuestas}
                     />
                     <CardViewForm
-                        formFavorite={formFavorite}
-                        fav={fav}
+                        formFavorite={true}
                         titulo={titulo}
                         nombre={nombre}
                         respuestas={respuestas}
                     />
                     <CardViewForm
-                        formFavorite={formFavorite}
-                        fav={fav}
+                        formFavorite={false}
                         titulo={titulo}
                         nombre={nombre}
                         respuestas={respuestas}
@@ -57,20 +59,19 @@ export const RecentForms = () => {
                 </Box>
             </Box>
 
-            <Box sx={{ width: "15%", display: "flex", padding: "0.2em" }}>
+            <Box sx={{ width: "200px", display: "flex", padding: "0.2em" }}>
                 <TextField
                     size='small'
                     select
                     defaultValue={1}
                     sx={{
-                        width: "210px", height: "42px", margin: "1.5em auto", "& fieldset": {
+                        width: "210px",
+                        height: "42px",
+                        margin: "1.5em auto",
+                        "& fieldset": {
                             borderColor: "var(--primary)",
                             borderRadius: "2em",
-                        },
-                        '& .MuiOutlinedInput-root': {
-                            '&.Mui-focused fieldset': {
-                                border: "none"
-                            },
+                            border: "none",
                         },
                     }}
                     onChange={handleChange}>

@@ -12,7 +12,7 @@ export const lightTheme = createTheme({
         white: {
             main: "#ffff"
         },
-        red: {
+        redMc: {
             main: "#7c0000"
         },
         greyW: {
@@ -20,13 +20,17 @@ export const lightTheme = createTheme({
         },
         blackGrey: {
             main: "#3d3845"
-        }
+        },
+        greenMc: {
+            main: "#0d9510"
+        },
+
     },
     components: {
         MuiButton: {
             defaultProps: {
                 variant: 'contained',
-                // disableElevation: true,
+                disableElevation: true,
             },
             styleOverrides: {
                 root: {
@@ -102,5 +106,40 @@ export const lightTheme = createTheme({
                 },
             },
         },
+
+        MuiPickersToolbar: {
+            styleOverrides: {
+                backgroundColor: '#d6d5d5dc',
+                root: {
+                    color: '#175e7b',
+                    borderRadius: '2px',
+                    borderWidth: '1px',
+                    backgroundColor: '#f0f0f0',
+                }
+            }
+        },
+
+        MuiDateCalendar: {
+            styleOverrides: {
+                root: {
+                    color: '#1565c0',
+                    borderRadius: '2px',
+                    borderWidth: '1px',
+                    backgroundColor: '#f0f0f0',
+                }
+            }
+        },
+
+        MuiTimeClock: {
+            backgroundColor: '#f0f0f0',
+            styleOverrides: {
+                root: {
+                    color: '#1565c0',
+                    borderRadius: '2px',
+                    borderWidth: '1px',
+                    backgroundColor: '#f0f0f0',
+                }
+            }
+        }
     }
 })

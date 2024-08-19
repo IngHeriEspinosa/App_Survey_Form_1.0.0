@@ -1,38 +1,29 @@
+import { useState } from "react"
 import { Box } from "@mui/material"
+
 import Navbar from "../components/UI/navbar/Navbar"
-
-import { Welcome } from "../components/UI/main/home/Welcome"
-import { RecentForms } from "../components/UI/main/home/RecentForms"
-import { CreateForm } from "../components/UI/main/form/CreateForm"
-import { useCreateForm, useResponseForm } from "../global"
-import { ResponseForm } from "../components/UI/main/form/ResponseForm"
+import { Forms } from "./Forms"
 
 
-const Home = () => {
+const Home = ({ setPreview }) => {
 
-    // Variables
-    const { formCreate } = useCreateForm()
-    const { formResponse } = useResponseForm()
-
-    console.log(formResponse);
+    // States
+    const [createform, setCreateform] = useState(false)
+    const [viewResponseform, setViewResponseform] = useState(false)
 
     return (
-        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "start" }}>
+        <Box
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "start"
+            }}
+        >
             <Navbar />
+            {/* <Welcome setCreateform={setCreateform} /> */}
+            <Forms />
 
-            {
-                formCreate && !formResponse
-                    ?
-                    <CreateForm />
-                    : formCreate && formResponse
-                        ?
-                        <ResponseForm />
-                        :
-                        <>
-                            <Welcome />
-                            <RecentForms />
-                        </>
-            }
         </Box>
     )
 }

@@ -1,3 +1,10 @@
 TITULO DEL FORMULARIO: MAXIMO DE 80 CARACTERES.
 Asignar el corazon de favorito.
 
+* hacer que se muestren las 10 primeras letras de la descripcion cuando se colapse. (descriptionRefs.current.value.length)
+
+Drag and drop en las opciones y de las preguntas.
+
+* Añadir secciones al crear el form.
+
+
